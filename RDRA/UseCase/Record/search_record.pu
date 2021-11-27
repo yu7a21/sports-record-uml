@@ -1,0 +1,22 @@
+@startuml
+skinparam backgroundColor transparent
+title  \n観戦記録情報検索 BUC\n 
+
+rectangle "情報\n観戦記録" as infoRecord
+rectangle "画面\n観戦記録検索" as viewSearch
+
+rectangle "Act\n観戦記録情報を検索する" as actSearch
+
+left to right direction
+
+:ユーザ: -- actSearch
+
+"UC\n条件を入力する" as (ucRecordSearchInput)
+"UC\n条件に合致する観戦記録を一覧表示" as (ucRecordSearchShow)
+
+actSearch -- ucRecordSearchInput
+ucRecordSearchInput -- infoRecord
+ucRecordSearchInput -- ucRecordSearchShow
+ucRecordSearchShow -- viewSearch
+
+@enduml

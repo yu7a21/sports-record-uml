@@ -1,0 +1,20 @@
+@startuml
+skinparam backgroundColor transparent
+title  \nユーザ情報閲覧 BUC\n 
+
+rectangle "情報\nユーザ" as infoUser
+rectangle "画面\nユーザ閲覧" as viewShow
+
+rectangle "Act\nユーザ情報を閲覧する" as actShow
+
+left to right direction
+
+:ユーザ: -- actShow
+
+"UC\nユーザ情報を閲覧する" as (ucUserShow)
+
+actShow -- ucUserShow
+ucUserShow -- infoUser
+ucUserShow -- viewShow
+
+@enduml

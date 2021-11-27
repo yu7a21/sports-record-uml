@@ -1,0 +1,13 @@
+@startuml
+skinparam actorStyle awesome
+title  \nシステムコンテキスト図\n 
+
+rectangle 観戦記録
+"SportsRecord" as (System)
+
+:ユーザ: - (System)
+(System) - 観戦記録
+
+note "観戦記録を記録するアプリ。\nユーザは自分が観戦した試合の記録を保存し、\nあとから閲覧できる。" as SPNote
+(System) .up. SPNote
+@enduml

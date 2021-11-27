@@ -1,0 +1,22 @@
+@startuml
+skinparam backgroundColor transparent
+title  \nユーザ情報検索 BUC\n 
+
+rectangle "情報\nユーザ" as infoUser
+rectangle "画面\nユーザ検索" as viewSearch
+
+rectangle "Act\nユーザ情報を検索する" as actSearch
+
+left to right direction
+
+:ユーザ: -- actSearch
+
+"UC\n条件を入力する" as (ucUserSearchInput)
+"UC\n条件に合致するユーザを一覧表示" as (ucUserSearchShow)
+
+actSearch -- ucUserSearchInput
+ucUserSearchInput -- infoUser
+ucUserSearchInput -- ucUserSearchShow
+ucUserSearchShow -- viewSearch
+
+@enduml

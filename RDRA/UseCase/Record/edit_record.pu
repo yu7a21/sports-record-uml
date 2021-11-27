@@ -1,0 +1,20 @@
+@startuml
+skinparam backgroundColor transparent
+title  \n観戦記録情報編集 BUC\n 
+
+rectangle "情報\n観戦記録" as infoRecord
+rectangle "画面\n観戦記録編集" as viewEdit
+
+rectangle "Act\n観戦記録情報を編集する" as actEdit
+
+left to right direction
+
+:ユーザ: -- actEdit
+
+"UC\n観戦記録情報を編集する" as (ucRecordEdit)
+
+actEdit -- ucRecordEdit
+ucRecordEdit -- infoRecord
+ucRecordEdit -- viewEdit
+
+@enduml

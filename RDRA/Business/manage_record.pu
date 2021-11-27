@@ -1,0 +1,24 @@
+@startuml
+skinparam backgroundColor transparent
+title  \n観戦記録管理 業務\n 
+
+"観戦記録新規登録" as (createRecord) #Pink
+"観戦記録編集" as (editRecord) #Pink
+"観戦記録削除" as (deleteRecord) #Pink
+"観戦記録閲覧" as (showRecord) #Pink
+"観戦記録検索" as (searchRecord) #Pink
+rectangle 観戦記録情報
+
+:観戦記録: -- (createRecord)
+:観戦記録: -- (editRecord)
+:観戦記録: -- (deleteRecord)
+:観戦記録: -- (showRecord)
+:観戦記録: -- (searchRecord)
+
+(createRecord) -- 観戦記録情報
+(editRecord) -- 観戦記録情報
+(deleteRecord) -- 観戦記録情報
+(showRecord) -- 観戦記録情報
+(searchRecord) -- 観戦記録情報
+
+@enduml

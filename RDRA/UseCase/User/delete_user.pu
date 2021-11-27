@@ -1,0 +1,20 @@
+@startuml
+skinparam backgroundColor transparent
+title  \nユーザ情報削除 BUC\n 
+
+rectangle "情報\nユーザ" as infoUser
+rectangle "画面\nユーザ削除" as viewDelete
+
+rectangle "Act\nユーザ情報を削除する" as actDelete
+
+left to right direction
+
+:ユーザ: -- actDelete
+
+"UC\nユーザ情報を削除する" as (ucUserDelete)
+
+actDelete -- ucUserDelete
+ucUserDelete -- infoUser
+ucUserDelete -- viewDelete
+
+@enduml

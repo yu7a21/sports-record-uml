@@ -1,0 +1,20 @@
+@startuml
+skinparam backgroundColor transparent
+title  \nユーザ情報編集 BUC\n 
+
+rectangle "情報\nユーザ" as infoUser
+rectangle "画面\nユーザ編集" as viewEdit
+
+rectangle "Act\nユーザ情報を編集する" as actEdit
+
+left to right direction
+
+:ユーザ: -- actEdit
+
+"UC\nユーザ情報を編集する" as (ucUserEdit)
+
+actEdit -- ucUserEdit
+ucUserEdit -- infoUser
+ucUserEdit -- viewEdit
+
+@enduml

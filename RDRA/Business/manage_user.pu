@@ -1,0 +1,24 @@
+@startuml
+skinparam backgroundColor transparent
+title  \nユーザ管理 業務\n 
+
+"ユーザ新規登録" as (createUser) #Pink
+"ユーザ編集" as (editUser) #Pink
+"ユーザ削除" as (deleteUser) #Pink
+"ユーザ閲覧" as (showUser) #Pink
+"ユーザ検索" as (searchUser) #Pink
+rectangle ユーザ情報
+
+:ユーザ: -- (createUser)
+:ユーザ: -- (editUser)
+:ユーザ: -- (deleteUser)
+:ユーザ: -- (showUser)
+:ユーザ: -- (searchUser)
+
+(createUser) -- ユーザ情報
+(editUser) -- ユーザ情報
+(deleteUser) -- ユーザ情報
+(showUser) -- ユーザ情報
+(searchUser) -- ユーザ情報
+
+@enduml

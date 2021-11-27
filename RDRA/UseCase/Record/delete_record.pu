@@ -1,0 +1,20 @@
+@startuml
+skinparam backgroundColor transparent
+title  \n観戦記録情報削除 BUC\n 
+
+rectangle "情報\n観戦記録" as infoRecord
+rectangle "画面\n観戦記録削除" as viewDelete
+
+rectangle "Act\n観戦記録情報を削除する" as actDelete
+
+left to right direction
+
+:ユーザ: -- actDelete
+
+"UC\n観戦記録情報を削除する" as (ucRecordDelete)
+
+actDelete -- ucRecordDelete
+ucRecordDelete -- infoRecord
+ucRecordDelete -- viewDelete
+
+@enduml

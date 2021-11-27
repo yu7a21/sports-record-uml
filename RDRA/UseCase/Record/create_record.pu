@@ -1,0 +1,20 @@
+@startuml
+skinparam backgroundColor transparent
+title  \n観戦記録情報作成 BUC\n 
+
+rectangle "情報\n観戦記録" as infoRecord
+rectangle "画面\n観戦記録作成" as viewCreate
+
+rectangle "Act\n観戦記録情報を作成する" as actCreate
+
+left to right direction
+
+:ユーザ: -- actCreate
+
+"UC\n観戦記録情報を作成する" as (ucRecordCreate)
+
+actCreate -- ucRecordCreate
+ucRecordCreate -- infoRecord
+ucRecordCreate -- viewCreate
+
+@enduml

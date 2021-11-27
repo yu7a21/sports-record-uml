@@ -1,0 +1,40 @@
+@startuml
+skinparam backgroundColor transparent
+title  \nユーザ新規登録 BUC\n 
+
+rectangle "情報\nユーザ" as infoUser1
+rectangle "情報\nユーザ" as infoUser2
+rectangle "画面\nユーザ登録" as viewRegist
+rectangle "画面\n仮登録完了" as viewCompTempRegist
+rectangle "画面\nメール受信画面(外部)" as viewEmail
+
+rectangle "外部システム\nメーラー" as mailer
+
+rectangle "Act\nユーザの仮登録をする" as actTemp
+rectangle "Act\nユーザの本登録をする" as actRegist
+
+left to right direction
+
+:ユーザ: -- actTemp
+:ユーザ: -- actRegist
+
+"UC\nユーザ名・メールアドレス\n・パスワードを入力" as (ucInputInfo)
+"UC\n入力されたメールアドレスに\n本登録用メールアドレスを送信" as (ucSentEmail)
+"UC\n受信したメール内の\n本登録用URLをクリック" as (ucRecieveEmail)
+"UC\nユーザの本登録を完了する" as (ucRegist)
+
+actTemp -- ucInputInfo
+ucInputInfo -- ucSentEmail
+
+ucInputInfo -- viewRegist
+ucSentEmail -- infoUser1
+ucSentEmail -- viewCompTempRegist
+
+actRegist -- ucRecieveEmail
+ucRecieveEmail -- ucRegist
+
+ucRecieveEmail -- viewEmail
+viewEmail -- mailer
+ucRegist -- infoUser2
+
+@enduml
